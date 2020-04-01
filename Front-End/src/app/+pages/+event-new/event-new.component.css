@@ -1,0 +1,26 @@
+.event-card {
+    margin: 20px;
+    cursor: pointer;
+}
+
+.event-list-card {
+    margin: 20px auto;
+    cursor: pointer;
+    width: 80%;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+    
+    .example-container form {
+        margin-bottom: 20px;
+    }
+
+   
+
+    .example-container .mat-radio-button {
+        margin: 0 12px;
+    }

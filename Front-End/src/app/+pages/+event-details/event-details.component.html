@@ -1,0 +1,24 @@
+<mat-card class="detail-card" *ngIf="eventDetails">
+    <mat-card-header>
+        <div mat-card-avatar class="detail-header-image"></div>
+        <mat-card-title>{{eventDetails.title}}</mat-card-title>
+        <mat-card-subtitle>{{eventDetails.date | date:'longDate'}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <h2>
+            Event Description
+        </h2>
+        <p>
+            {{eventDetails.description}}
+        </p>
+        <h3>
+            Event Notes
+        </h3>
+        <p>
+            {{eventDetails.note}}
+        </p>
+    </mat-card-content>
+    <button mat-raised-button color="primary" class="bottom-button" routerLink="/pages/event-list">Back to the Events List</button>
+</mat-card>
+
+
