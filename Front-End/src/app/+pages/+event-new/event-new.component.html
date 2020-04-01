@@ -1,0 +1,32 @@
+    <mat-card class="event-list-card">
+    <mat-card-header>        
+        <mat-card-title>Insert New Event</mat-card-title>        
+    </mat-card-header>
+    <form [formGroup]="newEventForm" class="example-container" (ngSubmit)="onSubmit(newEventForm.value)">
+        <mat-form-field appearance="outline">
+            <input matInput [matDatepicker]="picker1" placeholder="Event Date" formControlName="eventDate" required>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Event Title</mat-label>
+            <input id="eventTitle" matInput formControlName="eventTitle" placeholder="Event Title" required>
+            <mat-icon matSuffix>title</mat-icon>
+
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Event Description</mat-label>
+            <input id="eventDescription" matInput formControlName="eventDescription" placeholder="Event Description" required>
+            <mat-icon matSuffix>description</mat-icon>
+
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Note</mat-label>
+            <textarea style="resize : none" rows="4" cols="50" type="text" id="eventNote" matInput formControlName="eventNote" placeholder="Event Note"></textarea>
+            <mat-icon matSuffix>notes</mat-icon>
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="bottom-button" (ngSubmit)="onSubmit(newEventForm.value)">Insert New Event</button>
+    </form>
+</mat-card>
+

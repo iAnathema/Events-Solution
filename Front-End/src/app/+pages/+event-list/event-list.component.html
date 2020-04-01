@@ -1,0 +1,49 @@
+<!-- Content on medium and small screen -->
+<div class="d-block d-lg-none">
+    <mat-card *ngFor="let e of allEvents | paginate: { itemsPerPage: pageSize, currentPage: pageCurrent }" class="event-card" routerLink="/pages/event-details/{{e.id}}">
+        <mat-card-header>
+            <div mat-card-avatar class="card-header-image"></div>
+            <mat-card-title>
+                {{e.title}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{e.date | date:'longDate'}}
+            </mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+    <mat-paginator [length]="length"
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="pageSizeOptions"
+                   (page)="pagingNGX($event)">
+    </mat-paginator>
+</div>
+<!-- Content on large screen -->
+<div class="d-none d-lg-block">
+    <mat-card class="event-list-card">
+        <h3>Current Events</h3>
+        <mat-divider></mat-divider>
+        <mat-list>
+            <mat-list-item *ngFor="let e of allEvents | paginate: { itemsPerPage: pageSize, currentPage: pageCurrent }" routerLink="/pages/event-details/{{e.id}}">
+                <mat-icon matListIcon>event</mat-icon>
+                <h4 matLine>
+                    <b>
+                        {{e.title}}
+                    </b>
+                </h4>
+                <p matLine>
+                    <span>
+                        {{e.date | date:'longDate'}}
+                    </span>
+                </p>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+        </mat-list>
+        <mat-paginator [length]="length"
+                       [pageSize]="pageSize"
+                       [pageSizeOptions]="pageSizeOptions"
+                       (page)="pagingNGX($event)">
+        </mat-paginator>
+    </mat-card>
+    
+</div>
+

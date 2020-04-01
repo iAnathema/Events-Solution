@@ -1,0 +1,16 @@
+.event-card {
+    margin: 20px;
+    cursor: pointer;
+}
+
+.event-list-card {
+    margin: 20px auto;
+    cursor: pointer;
+    width: 80%;
+}
+
+
+.card-header-image {
+    background-image: url('../../../assets/img/card_header.png');
+    background-size: cover;
+}

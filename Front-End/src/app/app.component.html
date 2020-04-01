@@ -1,0 +1,25 @@
+<app-loader></app-loader>
+<div class="app-container">    
+    <mat-toolbar color="primary">
+        {{title}}
+        <nav style="margin-left: auto">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/pages/event-list">
+                    <mat-icon>event_note</mat-icon>
+                    <span>See all Events</span>
+                </button>
+                <button mat-menu-item routerLink="/pages/event-new">
+                    <mat-icon>create_new</mat-icon>
+                    <span>Add New Event</span>
+                </button>
+            </mat-menu>
+        </nav>
+    </mat-toolbar>
+    <div class="app-body">       
+        <app-pages></app-pages>
+    </div> 
+       <app-alert></app-alert>
+</div>
